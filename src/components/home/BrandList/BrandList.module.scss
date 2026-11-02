@@ -1,0 +1,40 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.section {
+  max-width: 1250px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+
+.title {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: $color-primary;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.brand {
+  display: grid;
+  flex: 0 0 172px;
+  place-items: center;
+  width: 172px;
+  height: 172px;
+  background: $color-white;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+}
+
+.logo {
+  transform: scale(0.8);
+}
