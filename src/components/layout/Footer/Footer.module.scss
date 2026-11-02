@@ -1,0 +1,107 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.footer {
+  background: #f4f4f4;
+}
+
+.main {
+  display: flex;
+  gap: 90px;
+  max-width: 1440px;
+  min-height: 282px;
+  margin: 0 auto;
+  padding: 42px 80px;
+
+  @include tablet {
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 24px;
+  }
+}
+
+.brand {
+  flex: 0 0 320px;
+  padding-right: 60px;
+  border-right: 1px solid $color-border;
+
+  @include tablet {
+    flex: none;
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  p {
+    max-width: 210px;
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.3;
+    color: $color-muted;
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+
+  a {
+    display: grid;
+    color: $color-text;
+
+    @include focus-ring;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+
+.columns {
+  display: flex;
+  flex: 1;
+  gap: 90px;
+  padding-top: 24px;
+
+  @include tablet {
+    gap: 40px;
+    padding-top: 0;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  a {
+    font-family: $font-alt;
+    font-size: 14px;
+    color: $color-muted;
+
+    @include focus-ring;
+  }
+}
+
+.copy {
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 300;
+  text-align: center;
+  background: $color-white;
+  color: $color-text;
+}

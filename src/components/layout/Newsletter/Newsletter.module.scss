@@ -1,0 +1,105 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.newsletter {
+  color: $color-white;
+  background: $color-deep;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 40px;
+  max-width: 1440px;
+  min-height: 162px;
+  margin: 0 auto;
+  padding: 0 96px;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 32px 24px;
+  }
+}
+
+.text {
+  h2 {
+    font-family: 'Outfit', $font-main;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  p {
+    max-width: 380px;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.3;
+  }
+}
+
+.fields {
+  display: flex;
+  gap: 8px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  input {
+    width: 166px;
+    height: 44px;
+    padding: 0 16px;
+    font-family: $font-main;
+    font-size: 14px;
+    color: $color-text;
+    background: $color-white;
+    border: 0;
+    border-radius: 4px;
+
+    &::placeholder {
+      color: #676767;
+    }
+
+    @include focus-ring;
+
+    @include mobile {
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+
+  button {
+    @include button-base;
+    @include focus-ring;
+    height: 44px;
+    padding: 0 40px;
+    font-size: 14px;
+    color: $color-deep;
+    background: $color-accent;
+    border-radius: 8px;
+  }
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 300;
+
+  input {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+  }
+}
+
+.feedback {
+  margin-top: 6px;
+  font-size: 13px;
+  color: $color-accent;
+}
