@@ -1,0 +1,84 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.carousel {
+  position: relative;
+  padding: 0 40px;
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.track {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 3 * 24px) / 4);
+  column-gap: 24px;
+  padding: 8px 4px 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > li {
+    scroll-snap-align: start;
+  }
+
+  @include tablet {
+    grid-auto-columns: calc((100% - 24px) / 2);
+  }
+
+  @include mobile {
+    grid-auto-columns: 82%;
+    column-gap: 12px;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  @include mobile {
+    display: none;
+  }
+
+  @include focus-ring;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: $color-text;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
