@@ -1,0 +1,67 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.showcase {
+  max-width: $container;
+  margin: 56px auto 0;
+  padding: 0 16px;
+
+  @include mobile {
+    margin-top: 40px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.title {
+  position: relative;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  color: $color-primary;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 200px);
+    height: 1px;
+    content: '';
+    background: $color-border;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  @include mobile {
+    font-size: 22px;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.subtitle {
+  font-size: 12px;
+  color: $color-muted;
+}
+
+.feedback {
+  padding: 48px 0;
+  text-align: center;
+  color: $color-muted;
+}
