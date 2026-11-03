@@ -1,0 +1,45 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.tabs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  margin: 0 0 24px;
+  border: 1px solid $color-border;
+
+  @include mobile {
+    grid-auto-columns: max-content;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+}
+
+.tab {
+  width: 100%;
+  height: 40px;
+  white-space: nowrap;
+
+  @include mobile {
+    padding: 0 18px;
+  }
+
+  padding: 0 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  background: none;
+  border: 0;
+  border-right: 1px solid $color-border;
+  cursor: pointer;
+
+  @include focus-ring;
+
+  &[aria-pressed='true'] {
+    font-weight: 700;
+    color: $color-primary;
+  }
+}
+
+li:last-child > .tab {
+  border-right: 0;
+}
