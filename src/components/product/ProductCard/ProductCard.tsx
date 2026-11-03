@@ -18,7 +18,6 @@ export function ProductCard({ product, onSelect }: Props) {
       <button
         type="button"
         className={styles.info}
-        aria-label={`Ver detalhes de ${productName}`}
         onClick={(event) => onSelect(product, event.currentTarget)}
       >
         <img

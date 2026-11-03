@@ -31,7 +31,7 @@ describe('ProductCard', () => {
     const onSelect = vi.fn()
     render(<ProductCard product={product} onSelect={onSelect} />)
 
-    await userEvent.click(screen.getByRole('button', { name: /Ver detalhes de/ }))
+    await userEvent.click(screen.getByRole('button', { name: /Iphone 11 PRO MAX BRANCO 1/ }))
 
     expect(onSelect).toHaveBeenCalledTimes(1)
   })

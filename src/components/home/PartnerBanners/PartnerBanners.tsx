@@ -12,7 +12,7 @@ export function PartnerBanners() {
         {BANNERS.map(({ id, title, text }) => (
           <li key={id} className={styles.banner}>
             <img
-              src={`${import.meta.env.BASE_URL}img/banner.jpg`}
+              src={`${import.meta.env.BASE_URL}img/banner.webp`}
               alt=""
               width={634}
               height={261}

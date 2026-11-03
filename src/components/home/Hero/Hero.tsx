@@ -5,7 +5,7 @@ export function Hero() {
     <section className={styles.hero} aria-labelledby="hero-title">
       <img
         className={styles.background}
-        src={`${import.meta.env.BASE_URL}img/hero.jpg`}
+        src={`${import.meta.env.BASE_URL}img/hero.webp`}
         alt=""
         width={1440}
         height={390}
